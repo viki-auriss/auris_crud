@@ -6,7 +6,7 @@
  * @module			:: controllers/Product
  */
 
-const Product = require("../models/test_user");
+const Product = require("../models/test_user.js");
 
 module.exports = {
 
@@ -33,6 +33,7 @@ delete : async function(req, res){
 },
 
   edit : async function(req,res){
+   // console.log(req.body);
   try{
     let params = req.body;
     let result = await test_user.edit(params);
@@ -55,6 +56,28 @@ list : async function (req, res) {
     res.badRequest(err);
   }
 },
+
+getProductType : async function (req, res) {
+  //sails.log.info("@Controller CourseController @Method get(req,res)", req.user['custom:postgres_UserID']);
+   console.log(req.params);
+   let obj = {}
+  try{
+    let params = req.params;
+    let result = await test_user.getProductType(params);
+      res.json(result);
+}catch(err){
+    //sails.log.error("@Contrlioller CourseController @Method get @Message Error:", err);
+    res.badRequest(err);
+  }
+},
+
+
+
+
+
+
+
+
 
   // create : async function(req,res){
   //   //sails.log.info("@Controller ProductController @Method create(req,res)", req.body);

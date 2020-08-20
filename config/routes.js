@@ -24,7 +24,9 @@ module.exports.routes = {
   'POST /products'     : 'ProductController.create',
   'GET /products/'     : 'ProductController.list',
   'PUT /products'   : 'ProductController.edit',
-  'DELETE /products/:id/:name'   : 'ProductController.delete',
+ // 'DELETE /products/:id/:name'   : 'ProductController.delete',
+  'DELETE /products'   : 'ProductController.delete',
+  'GET /products/:product_type'     : 'ProductController.getProductType',
   
   /***************************************************************************
   *                                                                          *
